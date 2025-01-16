@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [ "${COMPONENT}" == "zgw-dbstore" ]
+if [ "${COMPONENT}" == "zgw" ]
 then
   # need to test if user already exists
   radosgw-admin user create \

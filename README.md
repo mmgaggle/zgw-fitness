@@ -93,7 +93,7 @@ Set environmental variables if you want to override the default set of
 credentials for the `zippy` user.
 
 ```
-podman run -it rgw-dbstore:latest \
+podman run -it zgw:latest \
   -v /mnt:/var/lib/ceph \
   -e ACCESS_KEY=$AWS_ACCESS_KEY \
   -e SECRET_KEY=$AWS_SECRET_KEY
@@ -104,5 +104,5 @@ podman run -it rgw-dbstore:latest \
 ## Building zgw:dbstore container
 
 ```
-docker build -t zgw-dbstore docker/zgw-dbstore
+docker build -t zgw docker/zgw
 ```
