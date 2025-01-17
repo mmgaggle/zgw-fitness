@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+mkdir -p /var/lib/ceph/radosgw/{db,buckets}
+mkdir /var/lib/ceph/radosgw/db/rgw_posix_lmdbs
+
 if [ "${COMPONENT}" == "zgw" ]
 then
   # need to test if user already exists
@@ -12,8 +15,8 @@ then
 
   /usr/bin/radosgw \
     --cluster ceph \
-    --setuser $(id -u) \
-    --setgroup $(id -g) \
+    --setuser root \
+    --setgroup root \
     --default-log-to-stderr=true \
     --err-to-stderr=true \
     --default-log-to-file=false \
